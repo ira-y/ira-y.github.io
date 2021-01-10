@@ -28,7 +28,7 @@ body {
 }
 
 .header {
-	height: 42px;
+	height: 55px;
 	width: 100%;
 	background-color: rgb(0, 147, 184);
 	border: 1px solid rgb(0, 102, 150);
@@ -45,7 +45,7 @@ body {
 	width: 60px;
 	font-weight: bold;
 	background: rgb(255, 255, 255);
-	height: 25px;
+	height: 30px;
 	transition: all 0.8s ease;
 	border: 1px solid black;
 	margin-left: 8px;
@@ -55,8 +55,11 @@ body {
 
 #city-input {
 	width: 245px;
-	height: 25px;
+	height: 30px;
 	border-radius: 4px;
+	padding-left: 5px;
+	font-weight: bold;
+	font-size: 18px;
 }
 
 .time-intervals {
