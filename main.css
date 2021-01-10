@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+html, body {
+	height: 100%;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	outline: none;
+	border: 0;
+	font-family: "Roboto", sans-serif;
+	box-sizing: border-box;
+}
+
+body {
+	height: 100%;
+	width: 100%;
+  display: flex;
+	justify-content: center;
+}
+
+.wrapper {
+	height: 100%;
+	width: 100%;
+	background-color: rgb(0, 183, 255);
+	position: relative;
+}
+
+.header {
+	height: 42px;
+	width: 100%;
+	background-color: rgb(0, 147, 184);
+	border: 1px solid rgb(0, 102, 150);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.lock {
+	margin-right: 4px;
+}
+
+#search-btn {
+	width: 60px;
+	font-weight: bold;
+	background: rgb(255, 255, 255);
+	height: 25px;
+	transition: all 0.8s ease;
+	border: 1px solid black;
+	margin-left: 8px;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+#city-input {
+	width: 245px;
+	height: 25px;
+	border-radius: 4px;
+}
+
+.time-intervals {
+	height: 42px;
+	width: 100%;
+	background-color: rgb(0, 147, 184);
+	border-left: 1px solid rgb(0, 102, 150);
+	border-right: 1px solid rgb(0, 102, 150);
+	border-bottom: 1px solid rgb(0, 102, 150);
+	box-shadow: 0 5px 5px -5px #333;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.select-period {
+	flex-grow: 1;
+	cursor: pointer;
+	font-size: 20px;
+	font-weight: bold;
+	color: rgb(230, 230, 230); 
+	height: 42px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.selected {
+	border-bottom: 3px solid rgb(216, 216, 216);
+}
+
+#main-today, #main-tomorrow {
+	display: flex;
+	flex-direction: column;
+}
+
+.main-date {
+	display: flex;
+	justify-content: center;
+	padding-top: 20px;
+	font-weight: bold;
+	color: white;
+}
+
+.main-date #date-today, .main-date #date-tomorrow {
+	font-size: 25px;
+}
+
+.main-today-weather, .main-tomorrow-weather {
+	display: flex;
+	justify-content: space-around;
+	padding-top: 4%;
+}
+
+.single-temperature {
+	font-size: 100px;
+	color: white;
+	font-weight: bold;
+}
+
+.single-description {
+	color: white;
+	font-weight: bold;
+	font-size: 28px;
+}
+
+.single-image {
+	align-self: center;
+}
+
+.single-image-block {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#main-tomorrow {
+	display: none;
+}
+
+.main-today-footer {
+	font-size: 23px;
+	border-top: 1px solid rgb(189, 234, 255);
+	display: flex;
+	color: white;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 17%;;
+}
+
+.main-today-footer-block {
+	border-right: 1px solid  rgb(0, 102, 150);
+	width: 25%;
+	display: flex;
+	flex-direction: column;
+	line-height: 1.4;
+	padding-top: 15px;
+	background-color: rgb(0, 147, 184);
+}
+
+.main-today-footer-title {
+	font-weight: bold;
+	padding-left: 20%;
+}
+
+.main-today-footer-info {
+	padding-left: 20%;
+}
+
+#main-ten-days {
+	flex-direction: column;
+}
+
+.one-day {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 4%;
+	color: black;
+	border-bottom: 1px solid gray;
+	width: 100%;
+	background-color: white;
+	font-weight: bold;
+}
+
+#one-day-image {
+	max-width: 75px;
+	margin-right: 17px;
+}
+
+.one-day-image-temperature, .one-day-image {
+	display: flex;
+	align-items: center;
+}
+
+@media only screen and (max-width: 420px) {
+  #search-btn {
+		width: 50px;
+	}
+
+	.single-temperature {
+		font-size: 50px;
+	}
+
+	.single-description {
+		font-size: 23px;
+	}
+
+	.single-image {
+		align-self: center;
+		width: 90px;
+		height: auto;
+	}
+
+	.main-today-footer {
+		font-size: 15px;
+		height: 14%;
+	}
+
+	.main-today-footer-title {
+		padding-left: 5%;
+	}
+
+	.main-today-footer-info {
+    padding-left: 5%;
+	}
+
+	.main-today-weather, .main-tomorrow-weather {
+		padding: 15% 2% 0 2%;
+	}
+
+	.main-tomorrow-weather .temperature {
+		font-size: 21px;
+	}
+
+	.chance-preciption {
+		margin-top: 18%;
+	}
+}
+
+@media only screen and (max-width: 321px) {
+	#search-btn {
+		width: 40px;
+	}
+
+	.single-temperature {
+		font-size: 45px;
+	}
+
+	.single-description {
+		font-size: 15px;
+	}
+
+	.single-image {
+		align-self: center;
+		width: 80px;
+		height: auto;
+	}
+
+	.main-today-footer {
+		font-size: 14px;
+		height: 14%;
+	}
+
+	.main-today-footer-title {
+		padding-left: 5%;
+	}
+
+	.main-today-footer-info {
+    padding-left: 5%;
+	}
+
+	.main-today-weather, .main-tomorrow-weather {
+		padding: 15% 2% 0 2%;
+	}
+
+	.main-tomorrow-weather .temperature {
+		font-size: 16px;
+	}
+
+	.chance-preciption {
+		margin-top: 22%;
+	}
+
+	#main-tomorrow .single-image-block .single-description {
+		font-size: 16px;
+	}
+}

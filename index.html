@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Umbrella. Weather forecast</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Weather forecast">
+    <meta name="theme-color" content="rgb(0, 183, 255)">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="apple-touch-icon" href="/icons/app-icon/app-icon-180.png">
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js');
+      }
+    </script>
+  </head>
+  <body>
+    <div class="wrapper" >
+      <!-- Поиск. Верхняя строка -->
+      <div class="header">
+        <img class="lock" src="./icons/lock-small.png">
+        <input id="city-input" type="text" placeholder="Введите город">
+        <button id="search-btn">Поиск</button>
+      </div>
+
+      <!-- Ориентир. Кнопки выбора периода: сегодня, завтра, 10 дней -->
+      <div class="time-intervals">
+        <div class="select-period selected"  id="today-btn">Сегодня</div>
+        <div class="select-period" id="tomorrow-btn">Завтра</div>
+        <div class="select-period" id="ten-days-btn">10 дней</div>
+      </div>
+
+      <!-- Основной блок для отображения прогнозов на сегодня, завтра, 10 дней -->
+      <div class="main">
+        <!-- Блок для отображения прогноза на сегодня -->
+        <div id="main-today">
+          <!-- Дата на сегодня -->
+          <div class="main-date">
+            <div id="date-today" ></div>
+          </div>
+
+          <!-- Температура и картинка на сегодня -->
+          <div class="main-today-weather">
+            <!-- Температура на сегодня -->
+            <div>
+              <div class="single-temperature">
+                <span id="temperature"></span>
+                <sup>°C</sup>
+              </div>
+              <div class="single-description">
+                <span>Ощущается как</span>
+                <span id="feels-like"></span>
+                <sup>°C</sup>
+              </div>
+            </div>
+  
+            <!-- Картинка на сегодня -->
+            <div class="single-image-block">
+              <img class="single-image" id="single-image">
+              <div class="single-description" id="single-image-description"></div>
+            </div>
+          </div>
+
+          <!-- Ветер, влажность, восход, закат на сегодня -->
+          <div class="main-today-footer">
+            <div class="main-today-footer-block">
+              <div class="main-today-footer-title">Ветер</div>
+              <div class="main-today-footer-info">
+                <span id="main-today-wind-speed"></span>
+                <span>м/с</span>
+                <span id="main-today-wind-direction"></span>
+              </div>
+            </div>
+            <div class="main-today-footer-block">
+              <div class="main-today-footer-title">Влажность</div>
+              <div class="main-today-footer-info">
+                <span id="main-today-humidity"></span>
+                <span>%</span>
+              </div>
+            </div>
+            <div class="main-today-footer-block">
+              <div class="main-today-footer-title">Давление</div>
+              <div class="main-today-footer-info">
+                <span id="main-today-footer-pressure"></span>
+                <span>мм.р/с</span>
+              </div>
+            </div>
+            <div class="main-today-footer-block">
+              <div class="main-today-footer-title">Видимость</div>
+              <div class="main-today-footer-info">
+                <span id="main-today-footer-visibility"></span>
+                <span>км</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Блок для отображения прогноза на завтра -->
+        <div id="main-tomorrow">
+          <!-- Дата -->
+          <div class="main-date">
+            <div id="date-tomorrow" ></div>
+          </div>
+
+          <!-- Температура и картинка на завтра -->
+          <div class="main-tomorrow-weather single-description">
+            <!-- Температура -->
+            <div class="temperature">
+              <div class="min-temperature">
+                <span>Минимум: ↓</span>
+                <span id="min-temperature"></span>
+                <sup>°C</sup>
+              </div>
+              <div class="max-temeratire">
+                <span>Максимум: ↑</span>
+                <span id="max-temperatire"></span>
+                <sup>°C</sup>
+              </div>
+              <div class="chance-preciption">
+                <span>Вероятность осадков:</span>
+                <span id="chance-preciption"></span>
+                <span>%</span>
+              </div>
+            </div>
+
+            <!-- Картинка на завтра -->
+            <div class="single-image-block">
+              <img class="single-image" id="single-image-tomorrow">
+              <div class="single-description" id="single-image-description-tomorrow"></div>
+            </div>
+          </div>
+
+          <!-- Ветер, влажность, восход, закат на завтра -->
+          <div class="main-today-footer">
+            <div class="main-today-footer-block">
+              <div class="main-today-footer-title">Ветер</div>
+              <div class="main-today-footer-info">
+                <span id="main-today-wind-speed-tomorrow"></span>
+                <span>м/с</span>
+                <span id="main-today-wind-direction-tomorrow"></span>
+              </div>
+            </div>
+            <div class="main-today-footer-block">
+              <div class="main-today-footer-title">Влажность</div>
+              <div class="main-today-footer-info">
+                <span id="main-today-humidity-tomorrow"></span>
+                <span>%</span>
+              </div>
+            </div>
+            <div class="main-today-footer-block">
+              <div class="main-today-footer-title">Давление</div>
+              <div class="main-today-footer-info">
+                <span id="main-today-footer-pressure-tomorrow"></span>
+                <span>мм.р/с</span>
+              </div>
+            </div>
+            <div class="main-today-footer-block">
+              <div class="main-today-footer-title">Видимость</div>
+              <div class="main-today-footer-info">
+                <span id="main-today-footer-visibility-tomorrow"></span>
+                <span>км</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Блок для отображения прогноза на 10 дней -->
+        <div id="main-ten-days"></div>
+    </div>
+    <script type="text/javascript" src="main.js"></script>
+  </body>  
+</html>
