@@ -177,14 +177,14 @@ function buildOneDay(forecast, index) {
 					<img id="one-day-image" src="./icons/${forecast.weather.icon}.png">
 				</div>
 				<div class="one-day-temperature">
-					<div class="one-day-temperature-min">
-						<span>${Math.round(forecast.min_temp)}</span>
-						<span>°↓</span>
-					</div>
 					<div class="one-day-temperature-max">
 						<span>${Math.round(forecast.max_temp)}</span>
 						<span>°↑</span>
 					</div>
+					<div class="one-day-temperature-min">
+						<span>${Math.round(forecast.min_temp)}</span>
+						<span>°↓</span>
+					</div>					
 				</div>
 			</div>
 		</div>

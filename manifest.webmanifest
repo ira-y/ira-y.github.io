@@ -1,7 +1,7 @@
 {
-  "name": "Weather Forcast",
+  "name": "Umbrella. Weather Forecast",
   "short_name": "Weather",
-  "description": "Progressive Web App that displays weather forcast",
+  "description": "Progressive Web App that displays weather forecast",
   "icons": [
     {
         "src": "icons/app-icon/app-icon-72.png",
@@ -66,6 +66,6 @@
   ],
   "start_url": "index.html",
   "display": "fullscreen",
-  "theme_color": "#B12A34",
-  "background_color": "#B12A34"
+  "theme_color": "#006696",
+  "background_color": "#006696"
 }
