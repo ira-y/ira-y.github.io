@@ -1,174 +1,221 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Umbrella. Weather forecast</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Weather forecast">
-    <meta name="theme-color" content="rgb(0, 183, 255)">
-    <link rel="manifest" href="/manifest.webmanifest">
-    <link rel="stylesheet" type="text/css" href="main.css">
-    <link rel="apple-touch-icon" href="/icons/app-icon/app-icon-180.png">
-    <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('./sw.js');
-      }
-    </script>
+      <link rel="stylesheet" href="styles.css">
+    <title>
+      CV Ira Yankovskaya
+    </title>
   </head>
   <body>
-    <div class="wrapper" >
-      <!-- Поиск. Верхняя строка -->
-      <div class="header">
-        <img class="lock" src="./icons/lock-small.png">
-        <input id="city-input" type="text" placeholder="Введите город">
-        <button id="search-btn">Поиск</button>
-      </div>
-
-      <!-- Ориентир. Кнопки выбора периода: сегодня, завтра, 10 дней -->
-      <div class="time-intervals">
-        <div class="select-period selected"  id="today-btn">Сегодня</div>
-        <div class="select-period" id="tomorrow-btn">Завтра</div>
-        <div class="select-period" id="ten-days-btn">10 дней</div>
-      </div>
-
-      <!-- Основной блок для отображения прогнозов на сегодня, завтра, 10 дней -->
-      <div class="main">
-        <!-- Блок для отображения прогноза на сегодня -->
-        <div id="main-today">
-          <!-- Дата на сегодня -->
-          <div class="main-date">
-            <div id="date-today" ></div>
+    <div class="wrapper">
+      <div class="header">Irina Yankovskaya Front End developer</div>
+      <div class="wrapper-description">
+        <div class="description">
+          <div class="border-jpg">
+            <img class="round" src="./images/ira.jpg" alt="фото Иры">
           </div>
-
-          <!-- Температура и картинка на сегодня -->
-          <div class="main-today-weather">
-            <!-- Температура на сегодня -->
-            <div>
-              <div class="single-temperature">
-                <span id="temperature"></span>
-                <sup>°C</sup>
-              </div>
-              <div class="single-description">
-                <span>Ощущается как</span>
-                <span id="feels-like"></span>
-                <sup>°C</sup>
-              </div>
-            </div>
-  
-            <!-- Картинка на сегодня -->
-            <div class="single-image-block">
-              <img class="single-image" id="single-image">
-              <div class="single-description" id="single-image-description"></div>
-            </div>
-          </div>
-
-          <!-- Ветер, влажность, восход, закат на сегодня -->
-          <div class="main-today-footer">
-            <div class="main-today-footer-block">
-              <div class="main-today-footer-title">Ветер</div>
-              <div class="main-today-footer-info">
-                <span id="main-today-wind-speed"></span>
-                <span>м/с</span>
-                <span id="main-today-wind-direction"></span>
-              </div>
-            </div>
-            <div class="main-today-footer-block">
-              <div class="main-today-footer-title">Влажность</div>
-              <div class="main-today-footer-info">
-                <span id="main-today-humidity"></span>
-                <span>%</span>
-              </div>
-            </div>
-            <div class="main-today-footer-block">
-              <div class="main-today-footer-title">Давление</div>
-              <div class="main-today-footer-info">
-                <span id="main-today-footer-pressure"></span>
-                <span>мм.р/с</span>
-              </div>
-            </div>
-            <div class="main-today-footer-block">
-              <div class="main-today-footer-title">Видимость</div>
-              <div class="main-today-footer-info">
-                <span id="main-today-footer-visibility"></span>
-                <span>км</span>
-              </div>
+          <div class="border-text">
+            <span class="info">
+              Web Developer with experience of building web applications using modern technologies HTML5, CSS3 and JavaScript
+            </span>
+            <div class="gmail">
+              <p>Email: ira777ari@gmail.com</p>
+              <p id="sdgdfg">Address: Odessa, Ukraine</p>
             </div>
           </div>
         </div>
+      </div>
+      <div class="main">        
+        <div class="skills">
+          <div class="main-title">Skills</div>
+          <div class="languages">
+            <h2 class="languages-title">Languages</h2>
+            <div class="languages-main">
 
-        <!-- Блок для отображения прогноза на завтра -->
-        <div id="main-tomorrow">
-          <!-- Дата -->
-          <div class="main-date">
-            <div id="date-tomorrow" ></div>
-          </div>
+              <div class="language-block">                
+                <p class="language-title">JavaScript</p>
+                <div id="java-script-level">
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                </div>
+              </div>
 
-          <!-- Температура и картинка на завтра -->
-          <div class="main-tomorrow-weather single-description">
-            <!-- Температура -->
-            <div class="temperature">
-              <div class="max-temeratire">
-                <span>Максимум: ↑</span>
-                <span id="max-temperatire"></span>
-                <sup>°C</sup>
+              <div class="language-block">                
+                <p class="language-title">HTML5</p>
+                <div id="html-level">
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                </div>
               </div>
-              <div class="min-temperature">
-                <span>Минимум: ↓</span>
-                <span id="min-temperature"></span>
-                <sup>°C</sup>
-              </div>              
-              <div class="chance-preciption">
-                <span>Вероятность осадков:</span>
-                <span id="chance-preciption"></span>
-                <span>%</span>
-              </div>
-            </div>
 
-            <!-- Картинка на завтра -->
-            <div class="single-image-block">
-              <img class="single-image" id="single-image-tomorrow">
-              <div class="single-description" id="single-image-description-tomorrow"></div>
-            </div>
-          </div>
-
-          <!-- Ветер, влажность, восход, закат на завтра -->
-          <div class="main-today-footer">
-            <div class="main-today-footer-block">
-              <div class="main-today-footer-title">Ветер</div>
-              <div class="main-today-footer-info">
-                <span id="main-today-wind-speed-tomorrow"></span>
-                <span>м/с</span>
-                <span id="main-today-wind-direction-tomorrow"></span>
+              <div class="language-block">                
+                <p class="language-title">CSS3</p>
+                <div id="css-level">
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                </div>
               </div>
-            </div>
-            <div class="main-today-footer-block">
-              <div class="main-today-footer-title">Влажность</div>
-              <div class="main-today-footer-info">
-                <span id="main-today-humidity-tomorrow"></span>
-                <span>%</span>
-              </div>
-            </div>
-            <div class="main-today-footer-block">
-              <div class="main-today-footer-title">Давление</div>
-              <div class="main-today-footer-info">
-                <span id="main-today-footer-pressure-tomorrow"></span>
-                <span>мм.р/с</span>
-              </div>
-            </div>
-            <div class="main-today-footer-block">
-              <div class="main-today-footer-title">Видимость</div>
-              <div class="main-today-footer-info">
-                <span id="main-today-footer-visibility-tomorrow"></span>
-                <span>км</span>
-              </div>
+              
             </div>
           </div>
-        </div>
+                    
+          <div class="languages">
+            <div class="languages-title">Speaking languages</div>
+            <div class="languages-main">
 
-        <!-- Блок для отображения прогноза на 10 дней -->
-        <div id="main-ten-days"></div>
+              <div class="language-block">                
+                <p class="language-title">English</p>
+                <div id="english-level">
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                </div>
+              </div>
+
+              <div class="language-block">                
+                <p class="language-title">German</p>
+                <div id="german-level">
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                </div>
+              </div>
+
+              <div class="language-block">                
+                <p class="language-title">Russian</p>
+                <div id="russian-level">
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                </div>
+              </div>
+
+              <div class="language-block">                
+                <p class="language-title">Ukrainian</p>
+                <div id="russian-level">
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                </div>
+              </div>                 
+            </div>
+          </div>
+
+          <div class="languages">
+            <div class="languages-title">Development Tools</div>
+            <div class="languages-main single-lign">
+              <div class="language-block">                
+                <p class="language-title">Git</p>
+                <div id="Git-level">
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                </div>
+              </div>
+            </div>
+
+            
+          </div>
+
+          <div class="languages">
+            <div class="languages-title">Operating systems</div>
+            <div class="languages-main">
+
+              <div class="language-block">                
+                <p class="language-title">Windows</p>
+                <div id="Windows-level">
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                </div>
+              </div>
+
+              <div class="language-block">                
+                <p class="language-title">Ubuntu</p>
+                <div id="Ubuntu-level">
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                  <span class="language-level"></span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="languages">
+            <div class="languages-title">My projects</div>
+            <div class="languages-main">
+              <div class="language-block">                
+                <p class="language-title Courses">SPA:</p>
+                <a href="https://get-weather.github.io" target="_blank" class="app-link">Umbrella. Weather Forcast</a>
+              </div>
+            </div>
+
+            
+          </div>
+
+          <div class="languages">
+            <div class="languages-title">Courses</div>
+            <div class="languages-main">
+              <div class="language-block">                
+                <p class="language-title Courses">JavaScript:</p>
+                <p class="shrift">Code Club (09/2020-01/2021)</p>
+                  
+              </div>
+            </div>
+
+            
+          </div>
+
+          
+      </div>
     </div>
-    <script type="text/javascript" src="main.js"></script>
-  </body>  
+  </body>
 </html>
